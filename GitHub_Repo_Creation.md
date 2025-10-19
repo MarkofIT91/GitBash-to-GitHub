@@ -22,8 +22,8 @@
 13. In the manner for this walkthrough, we will walk through the GitBash command line process for uploading documents into an existing repo.
 14. "git init" establishes the connection with the existing GitHub repository in C:/Users/mjnic/AWS/Class-7/Gitbash-GitHub/.git/
 15. "git add" stages the files that you want to add and/or modified to your existing repo on GitHub from your PC file path.
-16. "git commit -m (first commit)" pushes the added and/or modified files to your GitHub repo from your PC and displays the message in parentheses.
+16. "git commit -m (first commit)" commits the added and/or modified files to be updated in your GitHub repo from your PC and displays the message in parentheses.
 17. "git branch -M main" changes the directory path on your PC from "Master" to "main".
-18. "git remote add origin https://github.com/MarkofIT91/GitBash-to-GitHub.git" to specify where we want to push the updates to.
+18. "git remote add origin https://github.com/MarkofIT91/GitBash-to-GitHub.git" to specify where we want to push the updates to/from.
 19. "git push -u origin main" to push the updates from our PC to the GitHub repo.
 20. 

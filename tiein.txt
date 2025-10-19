@@ -1,4 +1,4 @@
-…or create a new repository on the command line
+git…or create a new repository on the command line
 
 echo "# GitBash-to-GitHub" >> README.md
 git init
