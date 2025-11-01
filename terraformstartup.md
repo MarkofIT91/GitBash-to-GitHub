@@ -31,10 +31,9 @@ I'm using a Windows machine, so this explanation is mainly for windows.
     - Next, still within the VSC GitBash terminal, create a new file titled "0-auth.tf" by way of the "touch" command. This will be your authentification file for Terraform which is required for proper operation.
     - Once your 0-auth.tf file has been created AND SAVED, let's now populate the 0-auth.tf file with the following below:
 
-    [provider "aws" {
+    provider "aws" {
         region = "us-east-1"
         }
-
         terraform {
         required_providers {
             aws = {
@@ -43,21 +42,19 @@ I'm using a Windows machine, so this explanation is mainly for windows.
             }
         }
     }
-    ]
-
+    
     - Save the updates made to the file.
     - Run "terraform init" to start up the Terraform software.
     - This command , if successful, should create a ".terraform" folder and a ".terraform.lock.hcl" file. DO NOT MODIFY OR DELETE THESE FILES!!
     - Now, let's generate another Terraform file titled, 
     "1-main.tf". From here we will generate a code for a basic VPC resource. Populate the 1-main.tf file with the code below:
 
-    [resource "aws_vpc" "Terraform_VPC" {
+    resource "aws_vpc" "Terraform_VPC" {
         cidr_block = "10.234.0.0/16"
         tags = {
             Name = "basic-vpc"
         }
     }
-]
 
     - Run "terraform validate" to see if the current configuration is valid.
     - Run "terraform plan" to compare your infrastructure to your configuration of what your code intends to perform.
