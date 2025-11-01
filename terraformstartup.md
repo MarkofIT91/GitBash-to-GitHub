@@ -27,11 +27,11 @@ I'm using a Windows machine, so this explanation is mainly for windows.
     - Now open Visual Studio Code to the same folder you opened in GitBash as Admin. The folder should be empty, so we can populate it from scratch.
     - Set your VSC terminal default to that of GitBash by opening the terminal within VSC and selecting the terminal dropdown icon and opening the "Select Default Profile" option and choose GitBash. We will be running commands from here going forward.
     - Let's begin by uploading the .gitignore file within our newly created folder in VSC.
-        - run the command, "curl -O https://raw.githubusercontent.com/MarkofIT91/class6/refs/heads/main/.gitignore" as this will pull from the file path and save the file(s) to the current directory you are in with the same filename you pulled from the server you called to. This .gitignore file prevents sensitive Terraform data from being misused. DO NOT MODIFY OR DELETE THIS FILE!!
+        - run the command, "curl -O https://raw.githubusercontent.com/MarkofIT91/class6/refs/heads/main/.gitignore" as this will pull from the URL file path and save the file(s) to the current directory you are in with the same filename you pulled from the server you called to. This .gitignore file prevents sensitive Terraform data from being misused. DO NOT MODIFY OR DELETE THIS FILE!!
     - Next, still within the VSC GitBash terminal, create a new file titled "0-auth.tf" by way of the "touch" command. This will be your authentification file for Terraform which is required for proper operation.
     - Once your 0-auth.tf file has been created AND SAVED, let's now populate the 0-auth.tf file with the following below:
 
-    provider "aws" {
+    [provider "aws" {
         region = "us-east-1"
         }
 
@@ -43,18 +43,22 @@ I'm using a Windows machine, so this explanation is mainly for windows.
             }
         }
     }
+    ]
+
     - Save the updates made to the file.
     - Run "terraform init" to start up the Terraform software.
     - This command , if successful, should create a ".terraform" folder and a ".terraform.lock.hcl" file. DO NOT MODIFY OR DELETE THESE FILES!!
     - Now, let's generate another Terraform file titled, 
     "1-main.tf". From here we will generate a code for a basic VPC resource. Populate the 1-main.tf file with the code below:
 
-        resource "aws_vpc" "Terraform_VPC" {
+    [resource "aws_vpc" "Terraform_VPC" {
         cidr_block = "10.234.0.0/16"
         tags = {
             Name = "basic-vpc"
         }
     }
+]
+
     - Run "terraform validate" to see if the current configuration is valid.
     - Run "terraform plan" to compare your infrastructure to your configuration of what your code intends to perform.
     - Run "terraform apply" to begin creating the VPC resources called for creation.
